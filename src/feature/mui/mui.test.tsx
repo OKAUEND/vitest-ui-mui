@@ -12,4 +12,8 @@ describe("Material UI", () => {
         await userEvent.type(input, "a")
         expect(screen.getByText("入力内容が不正です")).toBeInTheDocument()
     })
+    test("Vitest UIで確認をするためテストが成功しないようにする",  async () => {
+      render(<Mui />)
+      expect(screen.getByText("入力内容が不正です")).toBeInTheDocument()
+  })
 })
